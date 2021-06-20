@@ -5,14 +5,26 @@
 #' @import htmlwidgets
 #'
 #' @export
-flipdownWidgets <- function(n, width = NULL, height = NULL, elementId = NULL) {
-
-  # forward options using x
-  parameters = list(
-    n = n
+flipdownWidgets <- function(count,
+                            theme = c("dark", "light"),
+                            headings = c("Days", "Hours", "Minutes", "Seconds"),
+                            width = NULL, height = NULL, elementId = NULL) {
+  theme <- match.arg(theme)
+  stopifnot(
+    "headings must have length = 4" = length(headings) == 4,
+    "headings must be type character" = inherits(headings, "character"),
+    "count must have length = 1" = length(count) == 1,
+    "count must have type integer or numeric" = inherits(count, c("integer",))
   )
 
-  # create widget
+  to <- as.numeric(Sys.time()) + count
+
+  parameters = list(
+    to = to,
+    theme = theme,
+    headings = headings
+  )
+
   htmlwidgets::createWidget(
     name = 'flipdownWidgets',
     parameters,
