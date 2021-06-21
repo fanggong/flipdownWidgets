@@ -5,19 +5,19 @@
 #' @import htmlwidgets
 #'
 #' @export
-flipdownWidgets <- function(count,
+flipdownWidgets <- function(to,
                             theme = c("dark", "light"),
                             headings = c("Days", "Hours", "Minutes", "Seconds"),
+                            ...,
                             width = NULL, height = NULL, elementId = NULL) {
+  to <- as.numeric(as.POSIXct(to, ...))
+
   theme <- match.arg(theme)
+
   stopifnot(
     "headings must have length = 4" = length(headings) == 4,
-    "headings must be type character" = inherits(headings, "character"),
-    "count must have length = 1" = length(count) == 1,
-    "count must have type integer or numeric" = inherits(count, c("integer",))
+    "headings must be type character" = inherits(headings, "character")
   )
-
-  to <- as.numeric(Sys.time()) + count
 
   parameters = list(
     to = to,
