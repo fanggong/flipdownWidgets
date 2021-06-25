@@ -8,6 +8,7 @@
 flipdownWidgets <- function(to,
                             theme = c("dark", "light"),
                             headings = c("Days", "Hours", "Minutes", "Seconds"),
+                            base_unit = NULL,
                             ...,
                             width = NULL, height = NULL, elementId = NULL) {
   to <- as.numeric(as.POSIXct(to, ...))
@@ -19,10 +20,15 @@ flipdownWidgets <- function(to,
     "headings must be type character" = inherits(headings, "character")
   )
 
+  if (!is.null(base_unit)) {
+    stopifnot("base_unit must greater than 0" = base_unit > 0)
+  }
+
   parameters = list(
     to = to,
     theme = theme,
-    headings = headings
+    headings = headings,
+    base_unit = base_unit
   )
 
   htmlwidgets::createWidget(
@@ -30,6 +36,9 @@ flipdownWidgets <- function(to,
     parameters,
     width = width,
     height = height,
+    sizingPolicy = htmlwidgets::sizingPolicy(
+      defaultWidth = "100%"
+    ),
     package = 'flipdownWidgets',
     elementId = elementId
   )

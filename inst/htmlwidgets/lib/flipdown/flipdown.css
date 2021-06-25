@@ -1,10 +1,15 @@
 /* THEMES */
 
+:root {
+  --base-unit: 1
+}
+
 /********** Theme: dark **********/
 /* Font styles */
 .flipdownWidgets.flipdown__theme-dark {
   font-family: sans-serif;
   font-weight: bold;
+  font-size: calc(var(--base-unit) * 15px);
 }
 /* Rotor group headings */
 .flipdownWidgets.flipdown__theme-dark .rotor-group-heading:before {
@@ -70,14 +75,12 @@
 
 .flipdownWidgets {
   overflow: visible;
-  width: 510px;
-  height: 110px;
 }
 
 .flipdownWidgets .rotor-group {
   position: relative;
   float: left;
-  padding-right: 30px;
+  padding-right: calc(var(--base-unit) * 30px);
 }
 
 .flipdownWidgets .rotor-group:last-child {
@@ -86,8 +89,8 @@
 
 .flipdownWidgets .rotor-group-heading:before {
   display: block;
-  height: 30px;
-  line-height: 30px;
+  height: calc(var(--base-unit) * 30px);
+  line-height: calc(var(--base-unit) * 30px);
   text-align: center;
 }
 
@@ -110,33 +113,33 @@
 .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):before {
   content: '';
   position: absolute;
-  bottom: 20px;
-  left: 115px;
-  width: 10px;
-  height: 10px;
+  bottom: calc(var(--base-unit) * 20px);
+  left: calc(var(--base-unit) * 115px);
+  width: calc(var(--base-unit) * 10px);
+  height: calc(var(--base-unit) * 10px);
   border-radius: 50%;
 }
 
 .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):after {
   content: '';
   position: absolute;
-  bottom: 50px;
-  left: 115px;
-  width: 10px;
-  height: 10px;
+  bottom: calc(var(--base-unit) * 50px);
+  left: calc(var(--base-unit) * 115px);
+  width: calc(var(--base-unit) * 10px);
+  height: calc(var(--base-unit) * 10px);
   border-radius: 50%;
 }
 
 .flipdownWidgets .rotor {
   position: relative;
   float: left;
-  width: 50px;
-  height: 80px;
-  margin: 0px 5px 0px 0px;
-  border-radius: 4px;
-  font-size: 4rem;
+  width: calc(var(--base-unit) * 50px);
+  height: calc(var(--base-unit) * 80px);
+  margin: 0px calc(var(--base-unit) * 5px) 0px 0px;
+  border-radius: calc(var(--base-unit) * 4px);
+  font-size: calc(var(--base-unit) * 50px);
   text-align: center;
-  perspective: 200px;
+  perspective: calc(var(--base-unit) * 200px);
 }
 
 .flipdownWidgets .rotor:last-child {
@@ -147,15 +150,15 @@
 .flipdownWidgets .rotor-bottom {
   overflow: hidden;
   position: absolute;
-  width: 50px;
-  height: 40px;
+  width: calc(var(--base-unit) * 50px);
+  height: calc(var(--base-unit) * 40px);
 }
 
 .flipdownWidgets .rotor-leaf {
   z-index: 1;
   position: absolute;
-  width: 50px;
-  height: 80px;
+  width: calc(var(--base-unit) * 50px);
+  height: calc(var(--base-unit) * 80px);
   transform-style: preserve-3d;
   transition: transform 0s;
 }
@@ -169,8 +172,8 @@
 .flipdownWidgets .rotor-leaf-rear {
   overflow: hidden;
   position: absolute;
-  width: 50px;
-  height: 40px;
+  width: calc(var(--base-unit) * 50px);
+  height: calc(var(--base-unit) * 40px);
   margin: 0;
   transform: rotateX(0deg);
   backface-visibility: hidden;
@@ -178,7 +181,7 @@
 }
 
 .flipdownWidgets .rotor-leaf-front {
-  line-height: 80px;
+  line-height: calc(var(--base-unit) * 80px);
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -189,7 +192,7 @@
 }
 
 .flipdownWidgets .rotor-top {
-  line-height: 80px;
+  line-height: calc(var(--base-unit) * 80px);
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -205,79 +208,7 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
-  width: 50px;
-  height: 40px;
+  width: calc(var(--base-unit) * 50px);
+  height: calc(var(--base-unit) * 40px);
   border-radius: 0px 0px 4px 4px;
-}
-
-@media (max-width: 550px) {
-
-  .flipdownWidgets {
-    width: 312px;
-    height: 70px;
-  }
-
-  .flipdownWidgets .rotor {
-    font-size: 2.2rem;
-    margin-right: 3px;
-  }
-
-  .flipdownWidgets .rotor,
-  .flipdownWidgets .rotor-leaf,
-  .flipdownWidgets .rotor-leaf-front,
-  .flipdownWidgets .rotor-leaf-rear,
-  .flipdownWidgets .rotor-top,
-  .flipdownWidgets .rotor-bottom,
-  .flipdownWidgets .rotor:after {
-    width: 30px;
-  }
-
-  .flipdownWidgets .rotor-group {
-    padding-right: 20px;
-  }
-
-  .flipdownWidgets .rotor-group:last-child {
-    padding-right: 0px;
-  }
-
-  .flipdownWidgets .rotor-group-heading:before {
-    font-size: 0.8rem;
-    height: 20px;
-    line-height: 20px;
-  }
-
-  .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):before,
-  .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):after {
-    left: 69px;
-  }
-
-  .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):before {
-    bottom: 13px;
-    height: 8px;
-    width: 8px;
-  }
-
-  .flipdownWidgets .rotor-group:nth-child(n+2):nth-child(-n+3):after {
-    bottom: 29px;
-    height: 8px;
-    width: 8px;
-  }
-
-  .flipdownWidgets .rotor-leaf-front,
-  .flipdownWidgets .rotor-top {
-    line-height: 50px;
-  }
-
-  .flipdownWidgets .rotor-leaf,
-  .flipdownWidgets .rotor {
-    height: 50px;
-  }
-
-  .flipdownWidgets .rotor-leaf-front,
-  .flipdownWidgets .rotor-leaf-rear,
-  .flipdownWidgets .rotor-top,
-  .flipdownWidgets .rotor-bottom,
-  .flipdownWidgets .rotor:after {
-    height: 25px;
-  }
 }
