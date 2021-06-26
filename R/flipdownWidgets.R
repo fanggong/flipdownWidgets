@@ -1,15 +1,32 @@
-#' <Add Title>
+#' Create an HTML countdown widget using the flipdown.js library
 #'
-#' <Add Description>
+#' This function creates an HTML widgets to display a countdown using the
+#' [flipdown.js](https://github.com/feddelegrand7/flipdownr) library.
+#'
+#' @param to R object to be passed to the [as.POSIXct] function to specifying the target date.
+#' @param theme The theme of the widget. Possible value: "dark", "light".
+#' @param headings A character vector of length 4 specifying the heading related to each time part.
+#' Defaults to c("Days", "Hours", "Minutes", "Seconds").
+#' @param width Width of the countdown widget. Must be a valid CSS unit (like \code{'100\%'}, \code{'400px'}, \code{'auto'})
+#' or a number, which will be coerced to a string and have \code{'px'} appended.
+#' @param height Not being used here. The height of the widget will be automatically sized according to
+#' the width of the widget.
+#' @param elementId An id for the widget (a random string by default).
+#' @param ... all the argument to be passed to [as.POSIXct].
+#'
+#' @return
+#' An HTML countdown widget
+#'
+#' @examples
+#' library(flipdownWidgets)
+#' flipdownWidgets(Sys.time() + 100)
 #'
 #' @import htmlwidgets
 #'
 #' @export
-flipdownWidgets <- function(to,
+flipdownWidgets <- function(to, ...,
                             theme = c("dark", "light"),
                             headings = c("Days", "Hours", "Minutes", "Seconds"),
-                            base_unit = NULL,
-                            ...,
                             width = NULL, height = NULL, elementId = NULL) {
   to <- as.numeric(as.POSIXct(to, ...))
 
@@ -20,15 +37,10 @@ flipdownWidgets <- function(to,
     "headings must be type character" = inherits(headings, "character")
   )
 
-  if (!is.null(base_unit)) {
-    stopifnot("base_unit must greater than 0" = base_unit > 0)
-  }
-
   parameters = list(
     to = to,
     theme = theme,
-    headings = headings,
-    base_unit = base_unit
+    headings = headings
   )
 
   htmlwidgets::createWidget(
@@ -36,9 +48,6 @@ flipdownWidgets <- function(to,
     parameters,
     width = width,
     height = height,
-    sizingPolicy = htmlwidgets::sizingPolicy(
-      defaultWidth = "100%"
-    ),
     package = 'flipdownWidgets',
     elementId = elementId
   )

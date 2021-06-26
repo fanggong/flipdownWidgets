@@ -2,10 +2,45 @@
 % Please edit documentation in R/flipdownWidgets.R
 \name{flipdownWidgets}
 \alias{flipdownWidgets}
-\title{<Add Title>}
+\title{Create an HTML countdown widget using the flipdown.js library}
 \usage{
-flipdownWidgets(n, width = NULL, height = NULL, elementId = NULL)
+flipdownWidgets(
+  to,
+  ...,
+  theme = c("dark", "light"),
+  headings = c("Days", "Hours", "Minutes", "Seconds"),
+  width = NULL,
+  height = NULL,
+  elementId = NULL
+)
+}
+\arguments{
+\item{to}{R object to be passed to the \link{as.POSIXct} function to specifying the target date.}
+
+\item{...}{all the argument to be passed to \link{as.POSIXct}.}
+
+\item{theme}{The theme of the widget. Possible value: "dark", "light".}
+
+\item{headings}{A character vector of length 4 specifying the heading related to each time part.
+Defaults to c("Days", "Hours", "Minutes", "Seconds").}
+
+\item{width}{Width of the countdown widget. Must be a valid CSS unit (like \code{'100\%'}, \code{'400px'}, \code{'auto'})
+or a number, which will be coerced to a string and have \code{'px'} appended.}
+
+\item{height}{Not being used here. The height of the widget will be automatically sized according to
+the width of the widget.}
+
+\item{elementId}{An id for the widget (a random string by default).}
+}
+\value{
+An HTML countdown widget
 }
 \description{
-<Add Description>
+This function creates an HTML widgets to display a countdown using the
+\href{https://github.com/feddelegrand7/flipdownr}{flipdown.js} library.
+}
+\examples{
+library(flipdownWidgets)
+flipdownWidgets(Sys.time() + 100)
+
 }

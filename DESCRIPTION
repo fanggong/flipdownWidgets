@@ -1,15 +1,16 @@
 Package: flipdownWidgets
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Title: A Wrapper of JavaScript Library 'flipdown.js'
+Version: 0.1.0
+Authors@R: c(
+      person(given = "Yongchao", family = "Fang", role = c("aut", "cre"), email = "yongchao.fang@outlook.com"),
+      person(given = "Peter", family = "Butcher", role = c("ctb", "cph"), comment = "author of flipdown.js")
+    )
+Description: Include a countdown <https://github.com/PButcher/flipdown> in all R contexts with the convenience of 'htmlwidgets'.
+URL: https://github.com/fanggong/flipdownWidgets
+BugReports: https://github.com/fanggong/flipdownWidgets/issues
+License: MIT + file LICENSE
+Imports:
+    htmlwidgets
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
