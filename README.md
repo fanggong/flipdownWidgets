@@ -1,10 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # flipdownWidgets
-
-<!-- badges: start -->
-<!-- badges: end -->
 
 The goal of flipdownWidgets is to include a countdown widget
 <https://github.com/PButcher/flipdown> in all R contexts with the
@@ -28,11 +23,12 @@ devtools::install_github("fanggong/flipdownWidgets")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use flipdownWidgets:
 
 ``` r
 library(flipdownWidgets)
 flipdownWidgets(
-  Sys.time() + 60*60*24*100, theme = "dark", headings = c("天", "时", "分", "秒")
+  Sys.time() + 60*60*24*100, theme = "dark", 
+  headings = c("dats", "hours", "minutes", "seconds")
 )
 ```
