@@ -67,6 +67,10 @@ flipdownWidgets <- function(to, ...,
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
 #'
+#' @return
+#' \code{flipdownWidgetsOutput} returns a flipdownWidgets output element that can be included in user interface.
+#' And \code{renderFlipdownWidgets} returns a function which will generate data for render.
+#'
 #' @name flipdownWidgets-shiny
 #'
 #' @export

@@ -24,6 +24,10 @@ string and have \code{'px'} appended.}
 \item{quoted}{Is \code{expr} a quoted expression (with \code{quote()})? This
 is useful if you want to save an expression in a variable.}
 }
+\value{
+\code{flipdownWidgetsOutput} returns a flipdownWidgets output element that can be included in user interface.
+And \code{renderFlipdownWidgets} returns a function which will generate data for render.
+}
 \description{
 Output and render functions for using flipdownWidgets within Shiny
 applications and interactive Rmd documents.
