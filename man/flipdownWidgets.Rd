@@ -37,7 +37,7 @@ An HTML countdown widget
 }
 \description{
 This function creates an HTML widgets to display a countdown using the
-\href{https://github.com/feddelegrand7/flipdownr}{flipdown.js} library.
+\href{https://github.com/PButcher/flipdown}{flipdown.js} library.
 }
 \examples{
 library(flipdownWidgets)

@@ -1,7 +1,7 @@
 #' Create an HTML countdown widget using the flipdown.js library
 #'
 #' This function creates an HTML widgets to display a countdown using the
-#' [flipdown.js](https://github.com/feddelegrand7/flipdownr) library.
+#' [flipdown.js](https://github.com/PButcher/flipdown) library.
 #'
 #' @param to R object to be passed to the [as.POSIXct] function to specifying the target date.
 #' @param theme The theme of the widget. Possible value: "dark", "light".
